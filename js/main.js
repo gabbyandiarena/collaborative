@@ -11,7 +11,7 @@ const CONTACT = {
   studio:    'Move Dance Studio',
   address:   '10981 N 5600 W, Highland, UT 84003',
   // Replace with your real Mindbody booking link:
-  mindbody:  'https://www.mindbodyonline.com/',
+  mindbody:  'https://www.mindbodyonline.com/explore/locations/the-collaborative-draper-ut',
   // Solo submission — paste the "Send" link of your Google Form (it must have a
   // File upload question). Uploaded videos auto-collect in a Google Drive folder.
   soloForm:  'https://forms.gle/REPLACE_WITH_YOUR_FORM_LINK',
