@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members — Video Library — The Collaborative</title>
+  <meta name="description" content="Members-only weekly class videos from The Collaborative. Access included with your Mindbody membership." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="videos">
+  <!-- ============================ COMING SOON OVERLAY ============================
+       Covers the whole page. Delete this block to reveal the video library.
+  -->
+  <div class="coming-soon">
+    <div>
+      <span class="eyebrow">Members video library</span>
+      <h2 class="display">Coming soon.</h2>
+      <p>Our weekly class footage is on its way — check back shortly.</p>
+    </div>
+  </div>
+
+  <div id="site-header"></div>
+
+  <!-- ============================ PAGE INTRO ============================ -->
+  <section class="section" style="padding-top:clamp(7rem,18vw,11rem);padding-bottom:0">
+    <div class="wrap">
+      <div class="intro reveal center" style="margin-inline:auto">
+        <span class="eyebrow">Members only</span>
+        <h1 class="display">The video library.</h1>
+        <p class="lead" style="margin-inline:auto">New class footage uploaded every week — yours to revisit any time. Access is included with your membership.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ACCESS GATE ============================ -->
+  <section class="section">
+    <div class="wrap">
+
+      <div class="gate reveal" id="gate">
+        <div class="gate__lock" id="gateLock"></div>
+        <h2 class="display">Enter your access code</h2>
+        <p>Members receive an access code after signing up through Mindbody. Enter it below to unlock this week’s videos.</p>
+        <form id="gateForm" novalidate>
+          <div class="field">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" autocomplete="email" placeholder="you@email.com" />
+          </div>
+          <div class="field">
+            <label for="accessCode">Access code</label>
+            <input type="text" id="accessCode" autocomplete="off" placeholder="Enter code" required />
+          </div>
+          <p class="gate__error" id="gateError"></p>
+          <button type="submit" class="btn btn--gold">Unlock Videos</button>
+        </form>
+        <p class="gate__note">Don’t have a code yet? <a href="#" id="gateMindbody" target="_blank" rel="noopener">Become a member on Mindbody</a> or <a id="gateEmail" href="#">email us</a>.</p>
+      </div>
+
+      <!-- ============================ LIBRARY (revealed on unlock) ============================ -->
+      <div class="library" id="library">
+        <div class="library__head">
+          <span class="lock-state" id="lockState"></span>
+          <button class="btn-link" id="signOut">Sign out</button>
+        </div>
+        <div class="weeks" id="weeksGrid"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/videos.js"></script>
+  <script>
+    // wire the "become a member" + email links once chrome is ready
+    document.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+      if (!window.CONTACT) return;
+      const mb = document.getElementById('gateMindbody');
+      const em = document.getElementById('gateEmail');
+      if (mb) mb.href = window.CONTACT.mindbody;
+      if (em) em.href = 'mailto:' + window.CONTACT.email;
+    }, 0));
+  </script>
+</body>
+</html>
