@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Collaborative — Dance Training · Highland, Utah</title>
-  <meta name="description" content="The Collaborative is high-level dance training in Highland, Utah — refined technique, master classes, and specialty intensives led by industry experts." />
+  <title>The Collaborative — Dance Training · Utah</title>
+  <meta name="description" content="The Collaborative is high-level dance training in Utah — refined technique, master classes, and specialty intensives led by industry experts." />
   <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -45,12 +45,12 @@
 
     <div class="hero__inner">
       <img class="hero__logo" src="assets/logo-mark.svg" alt="The Collaborative" />
-      <span class="eyebrow">Dance Training · Highland, Utah</span>
+      <span class="eyebrow">Dance Training · Utah</span>
       <h1 class="display">The Collaborative Training</h1>
-      <p class="lead">High-level dance training built around refined technique, real versatility, and a community that pushes you further.</p>
+      <p class="lead">Where training becomes transformative.</p>
       <div class="hero__cta">
-        <a class="btn btn--solid" href="events.html">Upcoming Trainings</a>
-        <a class="btn btn--ghost" href="videos.html">Member Videos</a>
+        <a class="btn btn--solid" data-mindbody href="#" target="_blank" rel="noopener">Book Here</a>
+        <a class="btn btn--ghost" href="events.html">Upcoming Events</a>
       </div>
     </div>
   </section>
@@ -61,7 +61,7 @@
       <div class="intro reveal">
         <span class="eyebrow">Who we are</span>
         <h2 class="display">Train. Become. Belong.</h2>
-        <p class="lead">The Collaborative brings together top instructors and a driven community of dancers under one roof. We give Utah’s dancers the kind of training you’d travel for — refined, versatile, and grounded in real connection.</p>
+        <p class="lead">The Collaborative is more than just dance training—it’s a community. Built for dancers who want to push to the next level, we provide elite training from a variety of highly renowned industry mentors. Dancers prepare for their goals, build confidence, and challenge their limits. Make your training transformative at The Collaborative. Here, you don’t just train…you become &amp; belong.</p>
       </div>
     </div>
   </section>
@@ -70,7 +70,7 @@
   <ul class="values reveal">
     <li><span class="num">01</span><span class="word">Training</span></li>
     <li><span class="num">02</span><span class="word">Versatility</span></li>
-    <li><span class="num">03</span><span class="word">Experience</span></li>
+    <li><span class="num">03</span><span class="word">Inspiration</span></li>
     <li><span class="num">04</span><span class="word">Passion</span></li>
     <li><span class="num">05</span><span class="word">Connection</span></li>
   </ul>
@@ -80,13 +80,13 @@
     <div class="wrap">
       <div class="intro reveal" style="margin-bottom:3rem">
         <span class="eyebrow">What we offer</span>
-        <h2 class="display">Classes &amp; intensives.</h2>
+        <h2 class="display">Classes, programs, &amp; intensives.</h2>
         <p class="muted">The schedule varies week to week — follow along on Instagram for the full monthly lineup.</p>
       </div>
 
       <div class="cards cards--3 reveal">
         <article class="card">
-          <div class="card__price">$30 <small>/ class</small></div>
+          <div class="card__price">$25 <small>/ class</small></div>
           <h3>Advanced Technique</h3>
           <p>A fast-paced technique class with everything you need to keep your training refined and elevated.</p>
         </article>
@@ -99,6 +99,38 @@
           <div class="card__price">$30 <small>/ class</small></div>
           <h3>Specialty Classes</h3>
           <p>Quick, efficient sessions that focus in on specific aspects of training — turns, strength, flexibility, and more.</p>
+        </article>
+        <article class="card">
+          <div class="card__price">$30 <small>/ class</small></div>
+          <h3>College Prep</h3>
+          <p>Focused training on the skills, versatility, and artistry collegiate dance programs are looking for.</p>
+        </article>
+        <article class="card">
+          <div class="card__price">$40 <small>/ class</small></div>
+          <h3>College Prep Push Hour</h3>
+          <p>An extended, high-intensity college-prep session to push your technique and stamina even further.</p>
+        </article>
+      </div>
+
+      <div class="intro reveal" style="margin:4.5rem 0 2rem">
+        <span class="eyebrow">Passes &amp; packages</span>
+        <h3 class="display">Punch passes &amp; memberships.</h3>
+      </div>
+
+      <div class="cards cards--2 reveal">
+        <article class="card">
+          <h3>Punch Passes</h3>
+          <ul class="pricelist">
+            <li><span>Tech · 4 classes</span><span class="pricelist__p">$100</span></li>
+            <li><span>Tech · 8 classes</span><span class="pricelist__p">$200</span></li>
+            <li><span>Master · 4 classes</span><span class="pricelist__p">$155</span></li>
+            <li><span>Master · 8 classes</span><span class="pricelist__p">$315</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card__price">$290 <small>/ month</small></div>
+          <h3>Collab Pass</h3>
+          <p>Monthly unlimited — any classes, all month long. The best value if you’re training regularly.</p>
         </article>
       </div>
     </div>
@@ -125,5 +157,11 @@
 
   <div id="site-footer"></div>
   <script src="js/main.js"></script>
+  <script>
+    // point any [data-mindbody] button at the Mindbody booking link
+    document.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+      if (window.CONTACT) document.querySelectorAll('[data-mindbody]').forEach(a => a.href = window.CONTACT.mindbody);
+    }, 0));
+  </script>
 </body>
 </html>
