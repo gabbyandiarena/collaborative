@@ -65,7 +65,7 @@ function buildFooter() {
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <a class="brand" href="index.html">${BRAND_MARK}<span class="brand__name">The Collaborative</span></a>
-        <p>High-level dance training in Highland, Utah — refined technique, real versatility, and a community that pushes you further.</p>
+        <p>High-level dance training in Utah — refined technique, real versatility, and a community that pushes you further.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
@@ -84,32 +84,45 @@ function buildFooter() {
     </div>
   </footer>`;
 }
-
 /* ---- Boot ---- */
 document.addEventListener('DOMContentLoaded', () => {
   const current = document.body.dataset.page || '';
 
   const headerSlot = document.getElementById('site-header');
   const footerSlot = document.getElementById('site-footer');
+
   if (headerSlot) headerSlot.innerHTML = buildHeader(current);
   if (footerSlot) footerSlot.innerHTML = buildFooter();
 
-  // expose icons for page scripts
+  // Expose icons and contact info for page scripts
   window.ICONS = ICONS;
   window.CONTACT = CONTACT;
 
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // sticky-header style on scroll
+  // Sticky-header style on scroll
   const header = document.getElementById('siteHeader');
-  const onScroll = () => header && header.classList.toggle('scrolled', window.scrollY > 40);
+  const onScroll = () =>
+    header && header.classList.toggle('scrolled', window.scrollY > 40);
+
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // reveal-on-scroll
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Apply the Mindbody booking link
+  document.querySelectorAll('[data-mindbody]').forEach((link) => {
+    link.href = CONTACT.mindbody;
+  });
 });
