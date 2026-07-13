@@ -14,7 +14,7 @@ const CONTACT = {
   mindbody:  'https://clients.mindbodyonline.com/classic/ws?studioid=5738674&stype=-7&sView=week&sLoc=0',
   // Solo submission — paste the "Send" link of your Google Form (it must have a
   // File upload question). Uploaded videos auto-collect in a Google Drive folder.
-  soloForm:  'https://forms.gle/REPLACE_WITH_YOUR_FORM_LINK',
+  soloForm:  'https://docs.google.com/forms/d/e/1FAIpQLSfSRMrDgJF0fCRSFYef8oqC-0rZQTpDvFcyzwdIdKWMn9jFlQ/viewform?usp=publish-editor,
 };
 
 const NAV = [
