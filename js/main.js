@@ -84,6 +84,7 @@ function buildFooter() {
     </div>
   </footer>`;
 }
+
 /* ---- Boot ---- */
 document.addEventListener('DOMContentLoaded', () => {
   const current = document.body.dataset.page || '';
