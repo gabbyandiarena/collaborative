@@ -311,6 +311,30 @@ h3.display { font-size: clamp(1.4rem, 4vw, 2.1rem); }
 .member .role { font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-dim); margin: 0.35rem 0 0.8rem; }
 .member p { color: var(--muted); font-size: 0.9rem; }
 
+/* ---- Two centered trainers ---- */
+.team--duo { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem 3rem; }
+.team--duo .member { flex: 0 1 300px; max-width: 300px; }
+.member--center { text-align: center; }
+.member--center .role { margin-bottom: 0; }
+
+/* ---- Guest choreographer name list ---- */
+.choreo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 2.5rem;
+}
+@media (min-width: 620px) { .choreo-list { columns: 3; } }
+@media (min-width: 940px) { .choreo-list { columns: 4; } }
+.choreo-list li {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+
 /* ============================================================
    EVENTS
    ============================================================ */
